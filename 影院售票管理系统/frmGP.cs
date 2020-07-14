@@ -73,12 +73,12 @@ namespace 影院售票管理系统
             int i = dataGridView1.CurrentCell.RowIndex;
 
 
-            this.textBox1.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            this.txtbGo.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
 
-            this.textBox2.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
-            this.textBox3.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
-            this.textBox4.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
-            this.textBox9.Text = dataGridView1.Rows[i].Cells[7].Value.ToString();
+            this.txtbPrice.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
+            this.txtbQuantity.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
+            this.txtbDestination.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
+            this.txtbDate.Text = dataGridView1.Rows[i].Cells[7].Value.ToString();
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -122,17 +122,17 @@ namespace 影院售票管理系统
                 
                 string strPH=DateTime.Now.ToString("yyyyMMddff");
                 string strRQ=DateTime.Now.ToString("yyyyMMdd");
-                string strI = "insert into GP values('" + strPH + "','" + this.textBox5.Text.ToString() + "'," + int.Parse(this.textBox6.Text.ToString()) + "," + float.Parse(this.textBox8.Text.ToString()) + ",'" + this.textBox1.Text.ToString() + "','" + this.textBox9.Text.ToString() + "','" + this.textBox4.Text.ToString() + "','" + strRQ + "','" + frmLogin.strCZY + "')";
+                string strI = "insert into GP values('" + strPH + "','" + this.textBox5.Text.ToString() + "'," + int.Parse(this.textBox6.Text.ToString()) + "," + float.Parse(this.textBox8.Text.ToString()) + ",'" + this.txtbGo.Text.ToString() + "','" + this.txtbDate.Text.ToString() + "','" + this.txtbDestination.Text.ToString() + "','" + strRQ + "','" + frmLogin.strCZY + "')";
                 SqlCommand cmd = new SqlCommand(strI, conn);
                 conn.Close();
                 conn.Open();
                 cmd.ExecuteScalar();
                 conn.Close();
-                this.textBox3.Text = "";
-                this.textBox2.Text = "";
-                this.textBox1.Text = "";
-                this.textBox4.Text = "";
-                this.textBox9.Text = "";
+                this.txtbQuantity.Text = "";
+                this.txtbPrice.Text = "";
+                this.txtbGo.Text = "";
+                this.txtbDestination.Text = "";
+                this.txtbDate.Text = "";
                 this.textBox6.Text = "";
                 this.textBox7.Text = "";
                 this.textBox8.Text = "";
@@ -150,7 +150,7 @@ namespace 影院售票管理系统
             } 
             else
             {
-                if (int.Parse(this.textBox6.Text.ToString()) > int.Parse(this.textBox3.Text.ToString()))
+                if (int.Parse(this.textBox6.Text.ToString()) > int.Parse(this.txtbQuantity.Text.ToString()))
             {
                 MessageBox.Show("购票数量大于剩余数量");
             }
@@ -160,28 +160,38 @@ namespace 影院售票管理系统
                 {
                     if (this.textBox10.Text.ToString() == "普通会员")
                     {
-                        this.textBox8.Text = (int.Parse(this.textBox2.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.9).ToString();
+                        this.textBox8.Text = (int.Parse(this.txtbPrice.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.9).ToString();
                     }
                     if (this.textBox10.Text.ToString() == "白金会员")
                     {
-                        this.textBox8.Text = (int.Parse(this.textBox2.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.8).ToString();
+                        this.textBox8.Text = (int.Parse(this.txtbPrice.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.8).ToString();
                     }
                     if (this.textBox10.Text.ToString() == "钻石会员")
                     {
-                        this.textBox8.Text = (int.Parse(this.textBox2.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.7).ToString();
+                        this.textBox8.Text = (int.Parse(this.txtbPrice.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.7).ToString();
                     }
                 }
                 if (this.comboBox2.Text.ToString() == "残疾证")
                 {
-                    this.textBox8.Text = (int.Parse(this.textBox2.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.1).ToString();
+                    this.textBox8.Text = (int.Parse(this.txtbPrice.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.1).ToString();
                 }
                 if (this.comboBox2.Text.ToString() == "学生证")
                 {
-                    this.textBox8.Text = (int.Parse(this.textBox2.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.5).ToString();
+                    this.textBox8.Text = (int.Parse(this.txtbPrice.Text.ToString()) * int.Parse(this.textBox6.Text.ToString()) * 0.5).ToString();
                 }
             }
             }
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
