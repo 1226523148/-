@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TicketingBLL
 {
-    static class Program
+    static class ProgramBLL
     {
         /// <summary>
         /// 应用程序的主入口点。

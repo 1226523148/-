@@ -129,7 +129,6 @@
             this.txtbPassword.Name = "txtbPassword";
             this.txtbPassword.Size = new System.Drawing.Size(244, 21);
             this.txtbPassword.TabIndex = 10;
-            this.txtbPassword.Text = "6-20位字母，数字或符号";
             this.txtbPassword.TextChanged += new System.EventHandler(this.txtbPassword_TextChanged);
             // 
             // txtbConfirm_password
@@ -140,7 +139,6 @@
             this.txtbConfirm_password.PasswordChar = '*';
             this.txtbConfirm_password.Size = new System.Drawing.Size(244, 21);
             this.txtbConfirm_password.TabIndex = 11;
-            this.txtbConfirm_password.Text = "再次输入您的登陆密码";
             // 
             // txtbId
             // 
@@ -148,9 +146,9 @@
             this.txtbId.Location = new System.Drawing.Point(162, 177);
             this.txtbId.Name = "txtbId";
             this.txtbId.PasswordChar = '*';
+            this.txtbId.ReadOnly = true;
             this.txtbId.Size = new System.Drawing.Size(244, 21);
             this.txtbId.TabIndex = 13;
-            this.txtbId.Text = "请输入身份证号码";
             // 
             // txtbPhone
             // 
@@ -159,7 +157,6 @@
             this.txtbPhone.Name = "txtbPhone";
             this.txtbPhone.Size = new System.Drawing.Size(244, 21);
             this.txtbPhone.TabIndex = 14;
-            this.txtbPhone.Text = "请输入您的手机号码";
             // 
             // txtbMailbox
             // 
@@ -168,7 +165,6 @@
             this.txtbMailbox.Name = "txtbMailbox";
             this.txtbMailbox.Size = new System.Drawing.Size(244, 21);
             this.txtbMailbox.TabIndex = 17;
-            this.txtbMailbox.Text = "请输入您的邮箱";
             // 
             // txtbName
             // 
@@ -177,7 +173,6 @@
             this.txtbName.Name = "txtbName";
             this.txtbName.Size = new System.Drawing.Size(244, 21);
             this.txtbName.TabIndex = 18;
-            this.txtbName.Text = "请输入姓名";
             // 
             // cmbxPassenger
             // 
@@ -222,7 +217,6 @@
             this.txtbUsername.Size = new System.Drawing.Size(244, 21);
             this.txtbUsername.TabIndex = 22;
             this.txtbUsername.TabStop = false;
-            this.txtbUsername.Text = "创建后不可更改";
             // 
             // btnSubmit
             // 

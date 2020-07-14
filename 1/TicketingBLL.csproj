@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10971978-8E67-45EA-9CED-62E64A97C205}</ProjectGuid>
+    <ProjectGuid>{B40DA12B-2569-4AB4-A1A9-9D8C81C8861E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TicketingModel</RootNamespace>
-    <AssemblyName>TicketingModel</AssemblyName>
+    <RootNamespace>TicketingBLL</RootNamespace>
+    <AssemblyName>TicketingBLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

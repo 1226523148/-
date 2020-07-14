@@ -50,13 +50,8 @@ namespace 影院售票管理系统
             }
             else
             {
-                strCZY = this.txtbUsername.Text.ToString();
-                SqlConnection conn = new SqlConnection(strConn);
-                conn.Open();
-                string strSql1 = "select UserType from ULogin where UserName='" + strUser + "'";
-                SqlCommand cmd1 = new SqlCommand(strSql1, conn);
-                strT = Convert.ToString(cmd1.ExecuteScalar());
-                conn.Close();
+               
+
 
 
                 string strSql = "select UserPwd from ULogin where UserName='" + strUser + "'";
